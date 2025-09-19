@@ -1,0 +1,110 @@
+# Copyright 2021 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# GCP project, subnetwork, and zone in which instance will be located.
+sap_project_id: 
+sap_nw_subnetwork: 
+sap_subnetwork_project_id: 
+sap_zone: 
+
+# Image of the VM instance.
+sap_source_image:
+sap_source_image_family: 
+sap_source_image_project: 
+
+# Supported DB2 versions 
+sap_db2_product_version: 
+
+sap_nw_product_and_version: 
+
+# Name of the DB2 VM instance.
+sap_nw_instance_name: 
+
+# Type of the VM instance.
+sap_nw_instance_type: 
+
+# Service account of the VM instance.
+sap_nw_service_account_email: 
+
+# Boot Disk Size and Type
+sap_nw_disk_size_boot: 
+sap_nw_disk_type_boot: 
+
+# swap Disk Size and Type
+sap_nw_disk_size_swap: 
+sap_nw_disk_type_swap: 
+
+# usrsap Disk Size and Type
+sap_nw_disk_size_usrsap: 
+sap_nw_disk_type_usrsap: 
+
+# sapmnt Disk Size and Type
+sap_nw_disk_size_sapmnt: 
+sap_nw_disk_type_sapmnt: 
+
+# /db2/<DBSID> Size and Type
+sap_db2_sid_disk_size: 
+sap_db2_sid_disk_type: 
+
+# /db2/<DBSID>/log_archive Size and Type
+sap_db2_log_archive_disk_size: 
+sap_db2_log_archive_disk_type: 
+
+# /<DBSID>/db2dump Size and Type
+sap_db2_dump_disk_size: 
+sap_db2_dump_disk_type: 
+
+# /db2/<DBSID>/log_dir Size and Type
+sap_db2_log_dir_disk_size: 
+sap_db2_log_dir_disk_type: 
+
+# /db2/<DBSID>/sapdata/sapdata1 Size and Type
+sap_db2_sapdata_disk_size: 
+sap_db2_sapdata_disk_type: 
+
+# Network Tags
+sap_nw_network_tags: 
+
+# SID of SAP instance.
+sap_nw_sid: 
+
+# The database tenant system ID for NetWeaver.
+sap_nw_db_sid: 
+
+# Password for SAP instance. See https://docs.ansible.com/ansible/2.9/user_guide/vault.html
+# for details on using Ansible Vault to manage passwords. For testing purposes you can change
+# this to an ordinary string.
+sap_nw_password: 
+sap_host_fqdn: 
+
+# Bucket where SAP install media is located.
+sap_nw_install_files_bucket: 
+
+# Bucket and prefix required for Terraform state. Every stack MUST have a unique
+# bucket and prefix combination or Terraform will treat them as the same stack.
+sap_tf_state_bucket: 
+sap_tf_state_bucket_prefix: 
+
+#Instance number for ASCS and PAS
+sap_nw_ascs_instance_number: ''
+sap_nw_pas_instance_number: ''
+
+sap_sapsys_gid: 
+sap_nw_sidadm_uid: 
+
+sap_ssh_user: 
+
+# nfs_mountpoint: 10.81.152.2:/busnfs
+# sap_nw_virtual_host: vm-usc1a-a-uscabbdb2st
+# sap_nw_virtual_host:  vm-usc1a-a-uscabbdb2st
