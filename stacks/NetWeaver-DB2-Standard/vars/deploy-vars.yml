@@ -57,6 +57,10 @@ sap_nw_disk_type_sapmnt:
 sap_db2_sid_disk_size: 
 sap_db2_sid_disk_type: 
 
+# /db2/db2<DBSID> Size and Type
+sap_db2_db2sid_disk_size: 
+sap_db2_db2sid_disk_type: 
+
 # /db2/<DBSID>/log_archive Size and Type
 sap_db2_log_archive_disk_size: 
 sap_db2_log_archive_disk_type: 
@@ -72,6 +76,10 @@ sap_db2_log_dir_disk_type:
 # /db2/<DBSID>/sapdata/sapdata1 Size and Type
 sap_db2_sapdata_disk_size: 
 sap_db2_sapdata_disk_type: 
+
+# /db2/<DBSID>/saptmp/saptmp1 Size and Type
+sap_db2_saptmp_disk_size: 
+sap_db2_saptmp_disk_type: 
 
 # Network Tags
 sap_nw_network_tags: 

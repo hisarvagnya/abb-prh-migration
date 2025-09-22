@@ -24,6 +24,8 @@ variable "disk_size_usrsap" { type = number }
 
 variable "db2_sid_disk_size" { type = number }
 
+variable "db2_db2sid_disk_size" { type = number }
+
 variable "db2_log_archive_disk_size" { type = number }
 
 variable "db2_dump_disk_size" { type = number }
@@ -31,6 +33,8 @@ variable "db2_dump_disk_size" { type = number }
 variable "db2_log_dir_disk_size" { type = number }
 
 variable "db2_sapdata_disk_size" { type = number }
+
+variable "db2_saptmp_disk_size" { type = number }
 
 variable "disk_type_boot" {}
 
@@ -42,6 +46,8 @@ variable "disk_type_usrsap" {}
 
 variable "db2_sid_disk_type" {}
 
+variable "db2_db2sid_disk_type" {}
+
 variable "db2_log_archive_disk_type" {}
 
 variable "db2_dump_disk_type" {}
@@ -49,6 +55,8 @@ variable "db2_dump_disk_type" {}
 variable "db2_log_dir_disk_type" {}
 
 variable "db2_sapdata_disk_type" {}
+
+variable "db2_saptmp_disk_type" {}
 
 variable "gce_ssh_user" {}
 

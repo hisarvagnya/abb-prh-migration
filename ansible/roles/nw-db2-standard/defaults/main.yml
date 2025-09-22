@@ -44,8 +44,10 @@ sap_nw_rdbms_files: '{{ sap_nw_install_files_dest }}/RDBMS'
 sap_nw_ascs_install_gateway: false
 sap_nw_ascs_install_web_dispatcher: false
 
-sap_db2_sid_partition_name: db2sid
+sap_db2_sid_partition_name: db2
 sap_db2_sid_mountpoint: /db2/{{ sap_db2_sid }}
+sap_db2_db2sid_partition_name: db2sid
+sap_db2_db2sid_mountpoint: /db2/db2{{ sap_db2_sid }}
 sap_db2_log_archive_partition_name: db2logarchive
 sap_db2_log_archive_mountpoint: /db2/{{ sap_db2_sid }}/log_archive
 sap_db2_log_partition_name: db2log
@@ -54,6 +56,8 @@ sap_db2_dump_partition_name: db2dump
 sap_db2_dump_mountpoint: /db2/{{ sap_db2_sid }}/db2dump
 sap_db2_sapdata_partition_name: db2sapdata
 sap_db2_sapdata_mountpoint: /db2/{{ sap_db2_sid }}/sapdata/sapdata1
+sap_db2_saptmp_partition_name: db2saptmp
+sap_db2_saptmp_mountpoint: /db2/{{ sap_db2_sid }}/saptmp/saptmp1
 sap_swap_partition_name: swap
 sap_swap_mountpoint: /SWAP
 # sap_usrsap_partition_name: saplv1
@@ -69,8 +73,10 @@ sap_nw_disks:
   partition_path: "{{ sap_vg_name }}"
 - name: saplv2
   partition_path: "{{ sap_vg_name }}"
-- name: db2sid
+- name: db2
   partition_path: "{{ sap_db2_sid_partition_name }}"
+- name: db2sid
+  partition_path: "{{ sap_db2_db2sid_partition_name }}"
 - name: db2logarchive
   partition_path: "{{ sap_db2_log_archive_partition_name }}"
 - name: db2dump
@@ -79,6 +85,8 @@ sap_nw_disks:
   partition_path: "{{ sap_db2_log_partition_name }}"
 - name: db2sapdata
   partition_path: "{{ sap_db2_sapdata_partition_name }}"
+- name: db2saptmp
+  partition_path: "{{ sap_db2_saptmp_partition_name }}"
 
 sap_nw_logvols:
   swap:
@@ -96,10 +104,15 @@ sap_nw_logvols:
     vol: "{{ sap_vg_name }}"
     mountpoint: "{{ sap_sapmnt_mountpoint }}"
     fstype: xfs
-  db2sid:
+  db2:
     size: 100%VG
     vol: "{{ sap_db2_sid_partition_name }}"
     mountpoint: "{{ sap_db2_sid_mountpoint }}"
+    fstype: xfs
+  db2sid:
+    size: 100%VG
+    vol: "{{ sap_db2_db2sid_partition_name }}"
+    mountpoint: "{{ sap_db2_db2sid_mountpoint }}"
     fstype: xfs
   db2logarchive:
     size: 100%VG
@@ -120,6 +133,11 @@ sap_nw_logvols:
     size: 100%VG
     vol: "{{ sap_db2_sapdata_partition_name }}"
     mountpoint: "{{ sap_db2_sapdata_mountpoint }}"
+    fstype: xfs
+  db2saptmp:
+    size: 100%VG
+    vol: "{{ sap_db2_saptmp_partition_name }}"
+    mountpoint: "{{ sap_db2_saptmp_mountpoint }}"
     fstype: xfs
 
 sap_db2_product: 'DB2'

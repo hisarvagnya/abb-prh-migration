@@ -27,6 +27,8 @@ module "nw_db2_standard" {
   disk_type_usrsap        = var.disk_type_usrsap
   db2_sid_disk_size       = var.db2_sid_disk_size
   db2_sid_disk_type       = var.db2_sid_disk_type
+  db2_db2sid_disk_size    = var.db2_db2sid_disk_size
+  db2_db2sid_disk_type    = var.db2_db2sid_disk_type
   db2_log_archive_disk_size = var.db2_log_archive_disk_size
   db2_log_archive_disk_type = var.db2_log_archive_disk_type
   db2_dump_disk_size      = var.db2_dump_disk_size
@@ -35,6 +37,8 @@ module "nw_db2_standard" {
   db2_log_dir_disk_type   = var.db2_log_dir_disk_type
   db2_sapdata_disk_size    = var.db2_sapdata_disk_size
   db2_sapdata_disk_type    = var.db2_sapdata_disk_type
+  db2_saptmp_disk_size    = var.db2_saptmp_disk_size
+  db2_saptmp_disk_type    = var.db2_saptmp_disk_type
   instance_name           = var.instance_name
   instance_type           = var.instance_type
   network_tags            = var.network_tags

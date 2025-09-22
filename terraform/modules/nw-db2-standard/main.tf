@@ -37,29 +37,39 @@ module "vm" {
       type                = var.disk_type_usrsap,
     },
     {
-      device_name         = "db2sid",
+      device_name         = "db2",
       size                = var.db2_sid_disk_size,
       type                = var.db2_sid_disk_type,
     },
-     {
+    {
+      device_name         = "db2sid",
+      size                = var.db2_db2sid_disk_size,
+      type                = var.db2_db2sid_disk_type,
+    },
+    {
       device_name         = "db2logarchive",
       size                = var.db2_log_archive_disk_size,
       type                = var.db2_log_archive_disk_type,
     },
-     {
+    {
       device_name         = "db2dump",
       size                = var.db2_dump_disk_size,
       type                = var.db2_dump_disk_type,
     },
-     {
+    {
       device_name         = "db2log",
       size                = var.db2_log_dir_disk_size,
       type                = var.db2_log_dir_disk_type,
     },
-     {
+    {
       device_name         = "db2sapdata",
       size                = var.db2_sapdata_disk_size,
       type                = var.db2_sapdata_disk_type,
+    },
+    {
+      device_name         = "db2saptmp",
+      size                = var.db2_saptmp_disk_size,
+      type                = var.db2_saptmp_disk_type,
     },
   ]
   instance_name           = var.instance_name

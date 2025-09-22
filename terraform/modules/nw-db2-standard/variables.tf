@@ -47,7 +47,13 @@ variable "disk_size_usrsap" {
 variable "db2_sid_disk_size" {
   type        = number
   description = "The size of the db2 sid disk in GB."
-  default     = 50
+  default     = 4
+}
+
+variable "db2_db2sid_disk_size" {
+  type        = number
+  description = "The size of the db2 db2sid disk in GB."
+  default     = 15
 }
 
 variable "db2_log_archive_disk_size" {
@@ -71,6 +77,12 @@ variable "db2_log_dir_disk_size" {
 variable "db2_sapdata_disk_size" {
   type        = number
   description = "The size of the db2 sapdata disk in GB."
+  default     = 10
+}
+
+variable "db2_saptmp_disk_size" {
+  type        = number
+  description = "The size of the db2 saptmp disk in GB."
   default     = 10
 }
 
@@ -104,6 +116,12 @@ variable "db2_sid_disk_type" {
   default     = "pd-ssd"
 }
 
+variable "db2_db2sid_disk_type" {
+  type        = string
+  description = "The type of the db2 db2sid disk."
+  default     = "pd-ssd"
+}
+
 variable "db2_log_archive_disk_type" {
   type        = string
   description = "The type of the db2 log archive disk."
@@ -125,6 +143,12 @@ variable "db2_log_dir_disk_type" {
 variable "db2_sapdata_disk_type" {
   type        = string
   description = "The type of the db2 sapdata disk."
+  default     = "pd-ssd"
+}
+
+variable "db2_saptmp_disk_type" {
+  type        = string
+  description = "The type of the db2 saptmp disk."
   default     = "pd-ssd"
 }
 
