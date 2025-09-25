@@ -24,6 +24,10 @@
     fail_msg: 'sap_nw_product and sap_nw_product_version must match one of {{ sap_product_vars.keys() | select("match", "^{}/".format(sap_nw_product)) | list | join(", ") }}'
   run_once: true
 
+- name: include machine-id-reset role
+  include_role:
+    name: machine-id-reset
+
 - name: include base role
   include_role:
     name: base
