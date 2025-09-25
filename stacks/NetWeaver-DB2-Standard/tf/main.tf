@@ -21,12 +21,12 @@ module "nw_db2_standard" {
   disk_size_sapmnt        = var.disk_size_sapmnt
   disk_size_swap          = var.disk_size_swap
   disk_size_usrsap        = var.disk_size_usrsap
-  disk_size_sapmnt_sid    = var. disk_size_sapmnt_sid
+  disk_size_dbexport      = var. disk_size_dbexport
   disk_type_boot          = var.disk_type_boot
   disk_type_sapmnt        = var.disk_type_sapmnt
   disk_type_swap          = var.disk_type_swap
   disk_type_usrsap        = var.disk_type_usrsap
-  disk_type_sapmnt_sid    = var. disk_type_sapmnt_sid
+  disk_type_dbexport    = var. disk_type_dbexport
   db2_sid_disk_size       = var.db2_sid_disk_size
   db2_sid_disk_type       = var.db2_sid_disk_type
   db2_db2sid_disk_size    = var.db2_db2sid_disk_size

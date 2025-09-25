@@ -23,13 +23,13 @@ module "vm" {
   additional_disks        = [
     {
       device_name         = "saplv2",
-      size                = var.disk_size_sapmnt_sid,
-      type                = var.disk_type_sapmnt_sid,
-    },
-    {
-      device_name         = "sapmnt",
       size                = var.disk_size_sapmnt,
       type                = var.disk_type_sapmnt,
+    },
+    {
+      device_name         = "DBexport",
+      size                = var.disk_size_dbexport,
+      type                = var.disk_type_dbexport,
     },
     {
       device_name         = "swap",

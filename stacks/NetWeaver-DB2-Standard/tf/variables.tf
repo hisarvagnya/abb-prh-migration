@@ -22,7 +22,7 @@ variable "disk_size_swap" { type = number }
 
 variable "disk_size_usrsap" { type = number }
 
-variable "disk_size_sapmnt_sid" { type = number }
+variable "disk_size_dbexport" { type = number }
 
 variable "db2_sid_disk_size" { type = number }
 
@@ -46,7 +46,7 @@ variable "disk_type_swap" {}
 
 variable "disk_type_usrsap" {}
 
-variable "disk_type_sapmnt_sid" {}
+variable "disk_type_dbexport" {}
 
 variable "db2_sid_disk_type" {}
 
