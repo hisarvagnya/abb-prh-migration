@@ -32,6 +32,12 @@ variable "disk_size_sapmnt" {
   default     = 25
 }
 
+variable "disk_size_sapmnt_sid" {
+  type        = number
+  description = "The size of the sapmnt/<SID> disk in GB."
+  default     = 25
+}
+
 variable "disk_size_swap" {
   type        = number
   description = "The size of the swap disk in GB."
@@ -95,6 +101,12 @@ variable "disk_type_boot" {
 variable "disk_type_sapmnt" {
   type        = string
   description = "The type of the sapmnt disk."
+  default     = "pd-ssd"
+}
+
+variable "disk_type_sapmnt_sid" {
+  type        = string
+  description = "The type of the sapmnt/<SID> disk."
   default     = "pd-ssd"
 }
 
@@ -162,6 +174,12 @@ variable "instance_type" {
   description = "The machine type of the instance."
 }
 
+variable "hostname" {
+  type        = string
+  description = "Custom hostname for the instance."
+  default     = ""
+}
+
 variable "project_id" {
   type        = string
   description = "The ID of the project in which the resources will be located."
@@ -225,4 +243,10 @@ variable "subnetwork_project_id" {
 variable "zone" {
   type        = string
   description = "The zone in which the instance will be located."
+}
+
+variable "deletion_protection" {
+  type        = bool
+  description = "Enable deletion protection on the device."
+  default     = false    
 }

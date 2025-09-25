@@ -21,10 +21,12 @@ module "nw_db2_standard" {
   disk_size_sapmnt        = var.disk_size_sapmnt
   disk_size_swap          = var.disk_size_swap
   disk_size_usrsap        = var.disk_size_usrsap
+  disk_size_sapmnt_sid    = var. disk_size_sapmnt_sid
   disk_type_boot          = var.disk_type_boot
   disk_type_sapmnt        = var.disk_type_sapmnt
   disk_type_swap          = var.disk_type_swap
   disk_type_usrsap        = var.disk_type_usrsap
+  disk_type_sapmnt_sid    = var. disk_type_sapmnt_sid
   db2_sid_disk_size       = var.db2_sid_disk_size
   db2_sid_disk_type       = var.db2_sid_disk_type
   db2_db2sid_disk_size    = var.db2_db2sid_disk_size
@@ -41,6 +43,7 @@ module "nw_db2_standard" {
   db2_saptmp_disk_type    = var.db2_saptmp_disk_type
   instance_name           = var.instance_name
   instance_type           = var.instance_type
+  hostname                = var.hostname
   network_tags            = var.network_tags
   project_id              = var.project_id
   service_account_email   = var.service_account_email
@@ -52,4 +55,5 @@ module "nw_db2_standard" {
   subnetwork              = var.subnetwork
   subnetwork_project_id   = var.subnetwork_project_id
   zone                    = var.zone
+  deletion_protection     = var.deletion_protection
 }

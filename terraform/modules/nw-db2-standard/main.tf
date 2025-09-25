@@ -23,6 +23,11 @@ module "vm" {
   additional_disks        = [
     {
       device_name         = "saplv2",
+      size                = var.disk_size_sapmnt_sid,
+      type                = var.disk_type_sapmnt_sid,
+    },
+    {
+      device_name         = "sapmnt",
       size                = var.disk_size_sapmnt,
       type                = var.disk_type_sapmnt,
     },
@@ -74,6 +79,8 @@ module "vm" {
   ]
   instance_name           = var.instance_name
   instance_type           = var.instance_type
+  deletion_protection     = var.deletion_protection
+  hostname                = var.hostname
   metadata                = local.metadata
   network_tags            = var.network_tags
   project_id              = var.project_id

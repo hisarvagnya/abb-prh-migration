@@ -34,6 +34,9 @@ sap_nw_instance_name:
 # Type of the VM instance.
 sap_nw_instance_type: 
 
+# Set this parameter to "true" to enable deletion protection on the instance
+sap_nw_instance_deletion_protection:
+
 # Service account of the VM instance.
 sap_nw_service_account_email: 
 
@@ -51,6 +54,10 @@ sap_nw_disk_type_usrsap:
 
 # sapmnt Disk Size and Type
 sap_nw_disk_size_sapmnt: 
+sap_nw_disk_type_sapmnt: 
+
+# sapmnt/<SID> Disk Size and Type
+sap_nw_disk_size_sapmnt_sid: 
 sap_nw_disk_type_sapmnt: 
 
 # /db2/<DBSID> Size and Type
@@ -94,7 +101,7 @@ sap_nw_db_sid:
 # for details on using Ansible Vault to manage passwords. For testing purposes you can change
 # this to an ordinary string.
 sap_nw_password: 
-sap_host_fqdn: 
+sap_nw_hostname: 
 
 # Bucket where SAP install media is located.
 sap_nw_install_files_bucket: 

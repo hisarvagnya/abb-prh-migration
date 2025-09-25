@@ -134,3 +134,15 @@ variable "zone" {
   type        = string
   description = "The zone in which the instance will be located."
 }
+
+variable "deletion_protection" {
+  type        = bool
+  description = "Enable deletion protection on the device."
+  default     = false
+}
+
+variable "hostname" {
+  type        = string
+  description = "Custom hostname for the instance."
+  default     = ""
+}

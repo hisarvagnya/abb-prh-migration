@@ -34,6 +34,8 @@ resource "google_compute_instance" "instance" {
   project                   = var.project_id
   tags                      = var.network_tags
   zone                      = var.zone
+  deletion_protection       = var.deletion_protection
+  hostname                  = var.hostname
 
   boot_disk {
     auto_delete             = var.boot_disk_auto_delete
