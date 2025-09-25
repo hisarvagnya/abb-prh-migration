@@ -27,7 +27,7 @@ module "vm" {
       type                = var.disk_type_sapmnt,
     },
     {
-      device_name         = "DBexport",
+      device_name         = "dbexport",
       size                = var.disk_size_dbexport,
       type                = var.disk_type_dbexport,
     },

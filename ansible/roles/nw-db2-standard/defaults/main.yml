@@ -64,7 +64,7 @@ sap_swap_mountpoint: /SWAP
 sap_usrsap_mountpoint: /usr/sap/{{ sap_db2_sid }}
 # sap_sapmnt_partition_name: saplv2
 sap_sapmnt_mountpoint: /sapmnt/{{ sap_db2_sid }}
-sap_dbexport_partition_name: DBexport
+sap_dbexport_partition_name: dbexport
 sap_dbexport_mountpoint: /DBexport
 sap_vg_name: sapvg
 
@@ -75,7 +75,7 @@ sap_nw_disks:
   partition_path: "{{ sap_vg_name }}"
 - name: saplv2
   partition_path: "{{ sap_vg_name }}"
-- name: DBexport
+- name: dbexport
   partition_path: "{{ sap_dbexport_partition_name }}"
 - name: db2
   partition_path: "{{ sap_db2_sid_partition_name }}"
@@ -108,7 +108,7 @@ sap_nw_logvols:
     vol: "{{ sap_vg_name }}"
     mountpoint: "{{ sap_sapmnt_mountpoint }}"
     fstype: xfs
-  DBexport:
+  dbexport:
     size: 100%VG
     vol: "{{ sap_dbexport_partition_name }}"
     mountpoint: "{{ sap_dbexport_mountpoint }}"
