@@ -48,7 +48,7 @@ resource "google_compute_instance" "instance" {
   }
 
   network_interface {
-    network                 = local.network
+    # network                 = local.network
     subnetwork              = var.subnetwork
     subnetwork_project      = local.subnetwork_project_id
     network_ip              = google_compute_address.internal_ip.address
