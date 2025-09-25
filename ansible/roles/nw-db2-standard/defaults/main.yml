@@ -99,12 +99,12 @@ sap_nw_logvols:
     mountpoint: "{{ sap_swap_mountpoint }}"
     fstype: swap
   saplv1:
-    size: 100%VG
+    size: 50%VG
     vol: "{{ sap_vg_name }}"
     mountpoint: "{{ sap_usrsap_mountpoint }}"
     fstype: xfs
   saplv2:
-    size: 100%VG
+    size: 50%VG
     vol: "{{ sap_vg_name }}"
     mountpoint: "{{ sap_sapmnt_mountpoint }}"
     fstype: xfs
