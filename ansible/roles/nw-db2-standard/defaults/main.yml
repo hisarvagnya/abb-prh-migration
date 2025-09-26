@@ -61,9 +61,9 @@ sap_db2_saptmp_mountpoint: /db2/{{ sap_db2_sid }}/saptmp/saptmp1
 sap_swap_partition_name: swap
 sap_swap_mountpoint: /SWAP
 # sap_usrsap_partition_name: saplv1
-sap_usrsap_mountpoint: /usr/sap/{{ sap_db2_sid }}
+sap_usrsap_mountpoint: /usr/sap/{{ sap_nw_sid }}
 # sap_sapmnt_partition_name: saplv2
-sap_sapmnt_sid_mountpoint: /sapmnt/{{ sap_db2_sid }}
+sap_sapmnt_sid_mountpoint: /sapmnt/{{ sap_nw_sid }}
 sap_sapmnt_partition_name: sapmnt
 sap_sapmnt_mountpoint: /sapmnt
 sap_vg_name: sapvg
