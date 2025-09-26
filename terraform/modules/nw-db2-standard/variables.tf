@@ -32,9 +32,9 @@ variable "disk_size_sapmnt" {
   default     = 25
 }
 
-variable "disk_size_dbexport" {
+variable "disk_size_sapmnt_sid" {
   type        = number
-  description = "The size of the DBexport disk in GB."
+  description = "The size of the sapmnt/<SID> disk in GB."
   default     = 25
 }
 
@@ -104,9 +104,9 @@ variable "disk_type_sapmnt" {
   default     = "pd-ssd"
 }
 
-variable "disk_type_dbexport" {
+variable "disk_type_sapmnt_sid" {
   type        = string
-  description = "The type of the DBexport disk."
+  description = "The type of the sapmnt_sid disk."
   default     = "pd-ssd"
 }
 

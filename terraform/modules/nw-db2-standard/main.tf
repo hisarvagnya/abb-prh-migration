@@ -27,9 +27,14 @@ module "vm" {
       type                = var.disk_type_sapmnt,
     },
     {
-      device_name         = "dbexport",
-      size                = var.disk_size_dbexport,
-      type                = var.disk_type_dbexport,
+      device_name         = "sapmnt",
+      size                = var.disk_size_sapmnt,
+      type                = var.disk_type_sapmnt,
+    },
+    {
+      device_name         = "sapmntsid",
+      size                = var.disk_size_sapmnt_sid,
+      type                = var.disk_type_sapmnt_sid,
     },
     {
       device_name         = "swap",

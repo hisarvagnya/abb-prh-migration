@@ -52,7 +52,11 @@ sap_nw_disk_type_swap:
 sap_nw_disk_size_usrsap: 
 sap_nw_disk_type_usrsap: 
 
-# sapmnt Disk Size and Type
+# sapmnt/<SID> Disk Size and Type
+sap_nw_disk_size_sapmnt_sid: 
+sap_nw_disk_type_sapmnt_sid: 
+
+# /sapmnt Size and Type
 sap_nw_disk_size_sapmnt: 
 sap_nw_disk_type_sapmnt: 
 
@@ -83,10 +87,6 @@ sap_db2_sapdata_disk_type:
 # /db2/<DBSID>/saptmp/saptmp1 Size and Type
 sap_db2_saptmp_disk_size: 
 sap_db2_saptmp_disk_type: 
-
-# /DBexport Size and Type
-sap_dbexport_disk_size: 
-sap_dbexport_disk_type: 
 
 # Network Tags
 sap_nw_network_tags: 
@@ -120,6 +120,8 @@ sap_nw_sidadm_uid:
 
 sap_ssh_user: 
 
+sap_nw_ascs_virtual_host: 
+sap_nw_pas_virtual_host: 
 # nfs_mountpoint: 10.81.152.2:/busnfs
 # sap_nw_virtual_host: vm-usc1a-a-uscabbdb2st
 # sap_nw_virtual_host:  vm-usc1a-a-uscabbdb2st

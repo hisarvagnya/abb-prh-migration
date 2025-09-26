@@ -1,0 +1,16 @@
+---
+
+- name: get nw secrets from gcp secrets manager
+  script: gcp_access_secret_version.py --projectId={{ sap_project_id }} --secretId={{ sap_nw_gsm_secret_id }} --secretIdVersion=latest
+  args:
+    executable: python3
+  register: nw_password
+  when: sap_nw_gsm_secret_id is defined
+
+- name: sap nw password set fact on nw nodes
+  set_fact: 
+    sap_nw_password: '{{ nw_password.stdout_lines|last }}'
+  delegate_to: "{{ item }}"
+  delegate_facts: true
+  loop: "{{ groups['nw'] }}"
+  when: sap_nw_gsm_secret_id is defined

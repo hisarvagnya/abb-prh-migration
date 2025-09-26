@@ -29,23 +29,23 @@
   tags:
     - disk_setup
 
-- name: Define disk path
+- name: Define disk path (hostname)
   set_fact:
     diskpath: '{{ diskpath_host }}'
   when: true in diskpath_host.results | map(attribute='stat') | map(attribute='exists') | list
   tags:
     - disk_setup
 
-- name: Define disk path
+- name: Define disk path (no hostname)
   set_fact:
     diskpath: '{{ diskpath_nohost }}'
   when: true in diskpath_nohost.results | map(attribute='stat') | map(attribute='exists') | list
   tags:
     - disk_setup
 
-- name: Create disk dictionary
+- name: Create disk dictionary (keyed by disk name)
   set_fact:
-    disksdict: "{{ disksdict | default({}) | combine( {item.item.partition_path: item.stat.lnk_source} ) }}"
+    disksdict_by_name: "{{ disksdict_by_name | default({}) | combine( {item.item.name: item.stat.lnk_source} ) }}"
   with_items: "{{ diskpath.results }}"
   tags:
     - disk_setup
@@ -56,16 +56,39 @@
     number: 1
     label: gpt
     state: present
-  with_items: "{{ disksdict|dict2items }}"
+  with_items: "{{ disksdict_by_name|dict2items }}"
   tags:
     - disk_setup
 
-- name: Create logical volume groups
+- name: Set fact for sapvg physical volumes paths
+  set_fact:
+    sapvg_pvs_paths: >
+      {{
+        diskpath.results
+        | selectattr('item.partition_path', 'equalto', sap_vg_name)
+        | map(attribute='stat.lnk_source')
+        | map('regex_replace', '$', '1')
+        | list
+      }}
+  tags:
+    - disk_setup
+
+- name: Create sapvg volume group from multiple physical volumes
   lvg:
-    vg: "{{ item.key }}"
-    pvs: "{{ item.value }}1"
+    vg: "{{ sap_vg_name }}"
+    pvs: "{{ sapvg_pvs_paths }}"
     state: present
-  with_items: "{{ disksdict|dict2items }}"
+  when: sapvg_pvs_paths | length > 0
+  tags:
+    - disk_setup
+
+- name: Create single-disk logical volume groups
+  lvg:
+    vg: "{{ item.item.partition_path }}"
+    pvs: "{{ item.stat.lnk_source }}1"
+    state: present
+  with_items: "{{ diskpath.results }}"
+  when: item.item.partition_path != sap_vg_name
   tags:
     - disk_setup
 
