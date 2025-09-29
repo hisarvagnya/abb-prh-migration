@@ -26,8 +26,8 @@
     - msg_server, MessageServer, GREEN, Running
     - '{{ "enserver, EnqueueServer, GREEN, Running" if sap_product_vars[sap_nw_product_and_version].ensa_version == "1" else "enq_server, Enqueue Server 2, GREEN, Running" }}'
     sap_instances:
-    - '{{ sap_nw_instance_name }}, {{ sap_nw_ascs_instance_number | int }}, 5{{ sap_nw_ascs_instance_number }}13, 5{{ sap_nw_ascs_instance_number }}14, 1, {{ sap_nw_gw_proc }}MESSAGESERVER|ENQUE{{ sap_nw_wd_proc }}, GREEN'
-    - '{{ sap_nw_instance_name }}, {{ sap_nw_pas_instance_number | int }}, 5{{ sap_nw_pas_instance_number }}13, 5{{ sap_nw_pas_instance_number }}14, 3, ABAP|GATEWAY|ICMAN|IGS, GREEN'
+    - '{{ sap_nw_ascs_virtual_host }}, {{ sap_nw_ascs_instance_number | int }}, 5{{ sap_nw_ascs_instance_number }}13, 5{{ sap_nw_ascs_instance_number }}14, 1, {{ sap_nw_gw_proc }}MESSAGESERVER|ENQUE{{ sap_nw_wd_proc }}, GREEN'
+    - '{{ sap_nw_pas_virtual_host }}, {{ sap_nw_pas_instance_number | int }}, 5{{ sap_nw_pas_instance_number }}13, 5{{ sap_nw_pas_instance_number }}14, 3, ABAP|GATEWAY|ICMAN|IGS, GREEN'
     sap_instance_number: '{{ sap_nw_ascs_instance_number }}'
 
 - name: include sap assertions role
@@ -41,6 +41,6 @@
     - gwrd, Gateway, GREEN, Running
     - icman, ICM, GREEN, Running
     sap_instances:
-    - '{{ sap_nw_instance_name }}, {{ sap_nw_ascs_instance_number | int }}, 5{{ sap_nw_ascs_instance_number }}13, 5{{ sap_nw_ascs_instance_number }}14, 1, {{ sap_nw_gw_proc }}MESSAGESERVER|ENQUE{{ sap_nw_wd_proc }}, GREEN'
-    - '{{ sap_nw_instance_name }}, {{ sap_nw_pas_instance_number | int }}, 5{{ sap_nw_pas_instance_number }}13, 5{{ sap_nw_pas_instance_number }}14, 3, ABAP|GATEWAY|ICMAN|IGS, GREEN'
+    - '{{ sap_nw_ascs_virtual_host }}, {{ sap_nw_ascs_instance_number | int }}, 5{{ sap_nw_ascs_instance_number }}13, 5{{ sap_nw_ascs_instance_number }}14, 1, {{ sap_nw_gw_proc }}MESSAGESERVER|ENQUE{{ sap_nw_wd_proc }}, GREEN'
+    - '{{ sap_nw_pas_virtual_host }}, {{ sap_nw_pas_instance_number | int }}, 5{{ sap_nw_pas_instance_number }}13, 5{{ sap_nw_pas_instance_number }}14, 3, ABAP|GATEWAY|ICMAN|IGS, GREEN'
     sap_instance_number: '{{ sap_nw_pas_instance_number }}'
