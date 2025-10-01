@@ -12,5 +12,5 @@
     sap_nw_password: '{{ nw_password.stdout_lines|last }}'
   delegate_to: "{{ item }}"
   delegate_facts: true
-  loop: "{{ groups['nw'] }}"
+  loop: "{{ groups['sap'] }}"
   when: sap_nw_gsm_secret_id is defined

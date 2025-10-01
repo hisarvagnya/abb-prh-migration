@@ -100,8 +100,9 @@ sap_nw_db_sid:
 # Password for SAP instance. See https://docs.ansible.com/ansible/2.9/user_guide/vault.html
 # for details on using Ansible Vault to manage passwords. For testing purposes you can change
 # this to an ordinary string.
-sap_nw_password: 
+# sap_nw_password: 
 sap_nw_hostname: 
+sap_nw_gsm_secret_id: 
 
 # Bucket where SAP install media is located.
 sap_nw_install_files_bucket: 
