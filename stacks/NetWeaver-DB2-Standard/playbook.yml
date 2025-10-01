@@ -61,12 +61,12 @@
         zone: '{{ sap_zone | default("us-central1-a") }}'
   tags: [assertions]
 
-- name: Fetch secrets and set fact on sap group
+- name: Fetch secrets and set fact on nw group
   hosts: 127.0.0.1   
   connection: local
   gather_facts: no   
   roles:
-    - role: google-secrets-manager
+    - role: gcp-secrets-manager
 
 - hosts: nw
   become: yes
