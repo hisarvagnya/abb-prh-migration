@@ -1,0 +1,22 @@
+- name: Get the primary IP address of the host
+  ansible.builtin.set_fact:
+    vm_ip_address: "{{ ansible_default_ipv4.address }}"
+
+- name: Define the fully qualified domain name (FQDN)
+  ansible.builtin.set_fact:
+    vm_fqdn: "{{ sap_nw_hostname }}"
+    vm_short_name: "{{ sap_nw_ascs_virtual_host }}"
+
+- name: Construct the hosts file entry
+  ansible.builtin.set_fact:
+    hosts_entry: "{{ vm_ip_address }} {{ vm_fqdn }} {{ vm_short_name }}"
+
+- name: Ensure the hostname entry is present in /etc/hosts
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    regexp: "^{{ vm_ip_address }}\\s+.*$" 
+    line: "{{ hosts_entry }}"
+    state: present
+    owner: root
+    group: root
+    mode: '0644' 
