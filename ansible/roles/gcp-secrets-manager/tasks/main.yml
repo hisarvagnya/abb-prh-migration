@@ -1,7 +1,7 @@
 ---
 
 - name: get nw secrets from gcp secrets manager
-  script: gcp_access_secret_version.py --projectId={{ sap_project_id }} --secretId={{ sap_nw_gsm_secret_id }} --secretIdVersion=latest
+  script: gcp_access_secret_version.py --projectId={{ sap_nw_secrets_project_id }} --secretId={{ sap_nw_gsm_secret_id }} --secretIdVersion=latest
   args:
     executable: python3
   register: nw_password
